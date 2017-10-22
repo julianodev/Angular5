@@ -1,0 +1,52 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <strong>TEMPLATES</strong>
+    </mat-panel-title>
+    <mat-panel-description>
+      Utilizando Templates
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+
+  <h1>Interpolação</h1>
+
+  <section>
+    <article>
+      <p>Renderizando Informações do componente para a view =>
+        <a target="_blank" href="{{urlGitHub}}">Meu perfil Github</a>
+      </p>
+
+      <p>
+        Podemos efetuar Calculos exemplo : 250 + 250 é igual =>
+        <strong>{{ 250 + 250}}</strong>
+      </p>
+
+      <p>
+        O resultado de 250 + 250 não é =>
+        <strong>{{ 250 + 250 + getValor(500)}}</strong>
+      </p>
+
+      <p>
+        Angular 5 :
+        <strong>{{courseAngular && likeCourse()}}</strong>
+      </p>
+    </article>
+
+    <h1>Property Binding</h1>
+    <article>
+      <img src="{{imageUrl}}" alt="">
+      <img [src]="imageUrl" alt="">
+    </article>
+
+    <h1>Two-way data Binding</h1>
+
+    <article>
+      <mat-form-field>
+        <input [(ngModel)]="text" matInput placeholder="Informe um texto qualquer">
+      </mat-form-field>
+
+      <h1 *ngIf="text">{{text}}</h1>
+    </article>
+  </section>
+</mat-expansion-panel>

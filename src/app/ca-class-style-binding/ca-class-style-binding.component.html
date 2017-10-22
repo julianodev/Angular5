@@ -1,0 +1,35 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <strong>Class e Style binding</strong>
+    </mat-panel-title>
+    <mat-panel-description>
+      Utilizando Class e Style binding
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+
+  <h1>Style Class</h1>
+  <section>
+    <article>
+      <mat-form-field floatPlaceholder="never">
+        <mat-select placeholder="Escolha um tema" [(ngModel)]="selectedValue" name="color">
+          <mat-option *ngFor="let color of colorsTheme" [value]="color.value">
+            {{ color.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <p *ngIf="selectedValue"> Cor customizada Escolhida:
+        <strong>{{selectedValue}}</strong>
+        <br>
+        <button mat-raised-button mat-button [color]="selectedValue">
+          <mat-icon aria-label="">
+            sentiment_satisfied
+          </mat-icon>
+          {{selectedValue}}
+        </button>
+      </p>
+    </article>
+  </section>
+</mat-expansion-panel>

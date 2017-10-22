@@ -1,0 +1,51 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <strong>Utilizando Reactive Forms</strong>
+    </mat-panel-title>
+    <mat-panel-description>
+      Utilizando Reactive Forms
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <h1>Utilizando Reactive Forms</h1>
+  <section>
+    <div class="flexbox-container">
+      <div>
+        <article>
+          <form [formGroup]="form" (ngSubmit)="onSubmit(); $event.preventDefault()" novalidate>
+            <div class="row container">
+              <mat-form-field>
+                <input matInput placeholder="Nome" formControlName="nome">
+                <mat-error *ngIf="validateInput('nome')">{{errorMessage('nome')}}</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="E-mail" type="email" formControlName="email">
+                <mat-error *ngIf="validateInput('email')">
+                  {{errorMessage('email')}}
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Informe a sua senha" formControlName="password" [type]="hide ? 'password' : 'text'">
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                <mat-error *ngIf="validateInput('password')">
+                  {{errorMessage('password') }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <button id="btnSubmit" [disabled]="!form.valid" mat-raised-button color="primary" type="submit">
+              <mat-icon> send </mat-icon>
+              Cadastrar Usuário
+            </button>
+          </form>
+        </article>
+      </div>
+      <div>
+        <article>
+          <ca-debug-template-driven [form]="form"></ca-debug-template-driven>
+        </article>
+      </div>
+    </div>
+
+  </section>
+</mat-expansion-panel>

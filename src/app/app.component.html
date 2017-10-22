@@ -1,0 +1,16 @@
+<app-ca-toolbar></app-ca-toolbar>
+<mat-progress-bar *ngIf="showProgressBar" mode="indeterminate"></mat-progress-bar>
+
+<div class="container" *ngIf="showContainer">
+  <ca-data-binding></ca-data-binding>
+  <br>
+  <ca-class-style-binding></ca-class-style-binding>
+  <br>
+  <ca-event-binding></ca-event-binding>
+  <br>
+  <ca-input-properties></ca-input-properties>
+  <br>
+  <ca-template-driven></ca-template-driven>
+  <br>
+  <ca-reactive-forms></ca-reactive-forms>
+</div>

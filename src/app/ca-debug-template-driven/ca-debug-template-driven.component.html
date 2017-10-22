@@ -1,0 +1,11 @@
+<div *ngIf="form">
+  <h3 class="title">Debug do Form</h3>
+  <pre>
+   <strong>Form Submetido : </strong>{{ form.submitted}}
+   <strong>Form Válido : </strong>{{ form.valid}}
+  </pre>
+
+  <pre>
+     <h2>Form Controls :</h2>{{ form.value | json}}
+  </pre>
+</div>
