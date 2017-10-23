@@ -12,6 +12,7 @@ export class ReactiveFormsComponent implements OnInit {
 
   form: FormGroup;
   hide: boolean = true;
+  errors: Array<any> = new Array<any>();
 
   constructor (private fb: FormBuilder, private snackBar: MatSnackBar) {
 
@@ -40,7 +41,7 @@ export class ReactiveFormsComponent implements OnInit {
   }
 
   ngOnInit() {
-
+console.log(this.errors);
   }
 
   onSubmit(): void {
@@ -66,19 +67,22 @@ export class ReactiveFormsComponent implements OnInit {
 
     let message: string = null;
 
+
     switch (inputName) {
       case 'nome':
         message = this.form.get(inputName).hasError('required') ? 'O Nome é obrigatório' : '';
+        this.errors.push(message);
         break;
       case 'email':
         message = this.form.get(inputName).hasError('required') ? 'Informe um e-mail' : this.form.get(inputName).hasError('email') ? 'O E-mail é inválido' : '';
+        this.errors.push(message);
         break;
       case 'password':
         message = this.form.get(inputName).hasError('required') ? 'Informe a sua senha' : this.form.get(inputName).hasError('minlength') ? 'A senha deve ter mais de 6 digitos' : '';
+        this.errors.push(message);
         break;
 
     }
-
     return message;
 
   }
