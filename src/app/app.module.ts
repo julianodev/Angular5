@@ -17,6 +17,7 @@ import { InputPropertiesComponent } from './ca-input-properties/ca-input-propert
 import { TemplateDrivenComponent } from './ca-template-driven/ca-template-driven.component';
 import { ReactiveFormsComponent } from './ca-reactive-forms/ca-reactive-forms.component';
 import { DebugTemplateDrivenComponent } from './ca-debug-template-driven/ca-debug-template-driven.component';
+import { RatingComponent } from './shared/rating/rating.component';
 
 
 
@@ -30,7 +31,8 @@ import { DebugTemplateDrivenComponent } from './ca-debug-template-driven/ca-debu
     InputPropertiesComponent,
     TemplateDrivenComponent,
     ReactiveFormsComponent,
-    DebugTemplateDrivenComponent
+    DebugTemplateDrivenComponent,
+    RatingComponent
   ],
   imports: [
     FormsModule,
@@ -50,7 +52,8 @@ import { DebugTemplateDrivenComponent } from './ca-debug-template-driven/ca-debu
     InputPropertiesComponent,
     TemplateDrivenComponent,
     ReactiveFormsComponent,
-    DebugTemplateDrivenComponent
+    DebugTemplateDrivenComponent,
+    RatingComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

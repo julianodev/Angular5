@@ -2,15 +2,25 @@
 <mat-progress-bar *ngIf="showProgressBar" mode="indeterminate"></mat-progress-bar>
 
 <div class="container" *ngIf="showContainer">
-  <ca-data-binding></ca-data-binding>
-  <br>
-  <ca-class-style-binding></ca-class-style-binding>
-  <br>
-  <ca-event-binding></ca-event-binding>
-  <br>
-  <ca-input-properties></ca-input-properties>
-  <br>
-  <ca-template-driven></ca-template-driven>
-  <br>
-  <ca-reactive-forms></ca-reactive-forms>
+    <ca-data-binding></ca-data-binding>
+    <br>
+    <ca-class-style-binding></ca-class-style-binding>
+    <br>
+    <ca-event-binding></ca-event-binding>
+    <br>
+    <ca-input-properties></ca-input-properties>
+    <br>
+    <ca-template-driven></ca-template-driven>
+    <br>
+    <ca-reactive-forms></ca-reactive-forms>
+
+    <div style="display:inline-block">
+        <h1>Avalie nosso curso :
+            <ca-rating #nota (rated)="rated = true" (valueRated)="valueRated"></ca-rating>
+        </h1>
+
+        <div [hidden]="!rated">
+            <h4>Olá, Obrigado por avaliar o nosso cuso de Angular 5 {{valueRated}} :) </h4>
+        </div>
+    </div>
 </div>
