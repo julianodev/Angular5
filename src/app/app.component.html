@@ -13,14 +13,15 @@
     <ca-template-driven></ca-template-driven>
     <br>
     <ca-reactive-forms></ca-reactive-forms>
-
+    <br>
+    <ca-grid-list></ca-grid-list>
     <div style="display:inline-block">
-        <h1>Avalie nosso curso :
-            <ca-rating #nota (rated)="rated = true" (valueRated)="valueRated"></ca-rating>
-        </h1>
+        <h2>Avalie nosso curso :
+            <ca-rating (rated)="rated = true"></ca-rating>
+        </h2>
 
         <div [hidden]="!rated">
-            <h4>Olá, Obrigado por avaliar o nosso cuso de Angular 5 {{valueRated}} :) </h4>
+            <h4>Olá, Obrigado por avaliar o nosso cuso de Angular 5 :) </h4>
         </div>
     </div>
 </div>

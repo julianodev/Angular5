@@ -23,6 +23,7 @@ export class ReactiveFormsComponent implements OnInit {
         ]],
       email: ['',
         [
+          Validators.required,
           Validators.email,
           Validators.nullValidator,
           Validators.minLength(6)

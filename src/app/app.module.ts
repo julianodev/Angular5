@@ -18,6 +18,7 @@ import { TemplateDrivenComponent } from './ca-template-driven/ca-template-driven
 import { ReactiveFormsComponent } from './ca-reactive-forms/ca-reactive-forms.component';
 import { DebugTemplateDrivenComponent } from './ca-debug-template-driven/ca-debug-template-driven.component';
 import { RatingComponent } from './shared/rating/rating.component';
+import { GridListComponent } from './ca-grid-list/ca-grid-list.component';
 
 
 
@@ -32,7 +33,8 @@ import { RatingComponent } from './shared/rating/rating.component';
     TemplateDrivenComponent,
     ReactiveFormsComponent,
     DebugTemplateDrivenComponent,
-    RatingComponent
+    RatingComponent,
+    GridListComponent
   ],
   imports: [
     FormsModule,
@@ -53,7 +55,8 @@ import { RatingComponent } from './shared/rating/rating.component';
     TemplateDrivenComponent,
     ReactiveFormsComponent,
     DebugTemplateDrivenComponent,
-    RatingComponent
+    RatingComponent,
+    GridListComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

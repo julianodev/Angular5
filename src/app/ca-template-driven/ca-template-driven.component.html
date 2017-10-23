@@ -1,46 +1,46 @@
 <mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      <strong>Utilizando Template Driven Forms</strong>
-    </mat-panel-title>
-    <mat-panel-description>
-      Utilizando Template Driven Forms
-    </mat-panel-description>
-  </mat-expansion-panel-header>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <strong>Utilizando Template Driven Forms</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+            Utilizando Template Driven Forms
+        </mat-panel-description>
+    </mat-expansion-panel-header>
 
-  <h1>Utilizando Template Driven Forms</h1>
-  <section>
-    <div class="flexbox-container">
-      <div>
-        <article>
+    <h1>Utilizando Template Driven Forms</h1>
+    <section>
+        <div class="flexbox-container">
+            <div>
+                <article>
 
-          <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-            <div class="row container">
-             
-              <mat-form-field>
-                <input #nome="ngModel" matInput required placeholder="Nome" [(ngModel)]="user.name" name="nome">
-                <mat-error *ngIf="!nome.valid || nome.touched">{{'O Nome é obrigatório'}}</mat-error>
-              </mat-form-field>
-              <mat-form-field>
-                <input #mail="ngModel" matInput required email placeholder="E-mail" type="email" [(ngModel)]="user.email" name="email">
-                <mat-error *ngIf="mail.invalid || mail.touched">
-                  {{mail.hasError('required') ? 'Informe um e-mail' : mail.hasError('email') ? 'O E-mail é inválido' : ''}}
-                </mat-error>
-              </mat-form-field>
-            </div>
-            <button id="btnSubmit" [disabled]="!form.valid" mat-raised-button color="primary" type="submit">
+                    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                        <div class="row container">
+
+                            <mat-form-field>
+                                <input #nome="ngModel" matInput required placeholder="Nome" [(ngModel)]="user.name" name="nome">
+                                <mat-error *ngIf="!nome.valid || nome.touched">{{'O Nome é obrigatório'}}</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input #mail="ngModel" matInput required email placeholder="E-mail" type="email" [(ngModel)]="user.email" name="email">
+                                <mat-error *ngIf="mail.invalid || mail.touched">
+                                    {{mail.hasError('required') ? 'Informe um e-mail' : mail.hasError('email') ? 'O E-mail é inválido' : ''}}
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <button id="btnSubmit" [disabled]="!form.valid" mat-raised-button color="primary" type="submit">
               <mat-icon> send </mat-icon>
               Salvar Informações
             </button>
-          </form>
-        </article>
-      </div>
-      <div>
-        <article>
-          <ca-debug-template-driven [form]="form"></ca-debug-template-driven>
-        </article>
-      </div>
-    </div>
+                    </form>
+                </article>
+            </div>
+            <div>
+                <article>
+                    <ca-debug-template-driven [form]="form"></ca-debug-template-driven>
+                </article>
+            </div>
+        </div>
 
-  </section>
+    </section>
 </mat-expansion-panel>
