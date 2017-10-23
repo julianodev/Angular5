@@ -5,7 +5,8 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'ca-template-driven',
   templateUrl: './ca-template-driven.component.html',
-  styleUrls: ['./ca-template-driven.component.css']
+  styleUrls: ['./ca-template-driven.component.css'],
+
 })
 export class TemplateDrivenComponent implements OnInit {
   user: any = {
@@ -23,7 +24,7 @@ export class TemplateDrivenComponent implements OnInit {
 
   }
   private showAlert(mensagem: string, title?: string): void {
-    this.snackBar.open(mensagem, title || 'Angular 5',
+    this.snackBar.open(mensagem.trim(), title.trim() || 'Angular 5',
       {
         duration: 1000,
         direction: 'ltr',

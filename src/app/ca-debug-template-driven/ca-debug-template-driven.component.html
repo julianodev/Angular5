@@ -1,11 +1,14 @@
 <div *ngIf="form">
-  <h3 class="title">Debug do Form</h3>
-  <pre>
-   <strong>Form Submetido : </strong>{{ form.submitted}}
-   <strong>Form Válido : </strong>{{ form.valid}}
+    <h3 class="title">Debug do Form</h3>
+    <pre>
+   <strong>Form Submit : </strong>{{ form?.submitted}}
+   <strong>Form Valid : </strong>{{ form?.valid}}
+   <strong>Form Touched : </strong>{{ form?.touched}}
+   <strong>Form Dirty : </strong>{{ form?.dirty}}
+   <strong>Form Pristine : </strong>{{ form?.pristine}}
   </pre>
 
-  <pre>
-     <h2>Form Controls :</h2>{{ form.value | json}}
+    <pre>
+     <h2>Form Controls :</h2>{{ form?.value | json}}
   </pre>
 </div>

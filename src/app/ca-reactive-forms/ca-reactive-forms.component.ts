@@ -12,23 +12,24 @@ export class ReactiveFormsComponent implements OnInit {
 
   form: FormGroup;
   hide: boolean = true;
+
   constructor (private fb: FormBuilder, private snackBar: MatSnackBar) {
 
     this.form = this.fb.group({
-      nome: ['',
+      nome: [null,
         [
           Validators.required,
           Validators.minLength(3),
           Validators.nullValidator
         ]],
-      email: ['',
+      email: [null,
         [
           Validators.required,
           Validators.email,
           Validators.nullValidator,
           Validators.minLength(6)
         ]],
-      password: ['',
+      password: [null,
         [
           Validators.required,
           Validators.minLength(8),

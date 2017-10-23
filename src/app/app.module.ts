@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 //root component
 import { AppComponent } from './app.component';
@@ -19,6 +19,8 @@ import { ReactiveFormsComponent } from './ca-reactive-forms/ca-reactive-forms.co
 import { DebugTemplateDrivenComponent } from './ca-debug-template-driven/ca-debug-template-driven.component';
 import { RatingComponent } from './shared/rating/rating.component';
 import { GridListComponent } from './ca-grid-list/ca-grid-list.component';
+import { GithubComponent } from './ca-github/ca-github.component';
+import { GithubService } from './ca-github/github.service';
 
 
 
@@ -34,12 +36,13 @@ import { GridListComponent } from './ca-grid-list/ca-grid-list.component';
     ReactiveFormsComponent,
     DebugTemplateDrivenComponent,
     RatingComponent,
-    GridListComponent
+    GridListComponent,
+    GithubComponent
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AngularMaterial
@@ -56,9 +59,10 @@ import { GridListComponent } from './ca-grid-list/ca-grid-list.component';
     ReactiveFormsComponent,
     DebugTemplateDrivenComponent,
     RatingComponent,
-    GridListComponent
+    GridListComponent,
+    GithubComponent
   ],
-  providers: [],
+  providers: [GithubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

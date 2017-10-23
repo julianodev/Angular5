@@ -1,0 +1,27 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <strong>HttpClient </strong>
+        </mat-panel-title>
+        <mat-panel-description>
+            Utilizando HttpClient
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <h1 class="title">HttpClient</h1>
+    <section>
+        <article>
+            <button mat-raised-button color="primary" (click)="getUsers()">
+          <mat-icon>search</mat-icon>
+          Listar Usuários
+        </button>
+        </article>
+        <article>
+            <mat-list>
+                <mat-list-item *ngFor="let user of users"> {{user.login}} </mat-list-item>
+            </mat-list>
+        </article>
+    </section>
+
+</mat-expansion-panel>
+<mat-progress-bar *ngIf="showProgressBar" mode="indeterminate"></mat-progress-bar>
